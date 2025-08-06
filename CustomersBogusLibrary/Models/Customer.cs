@@ -1,4 +1,5 @@
-﻿namespace CustomersBogusLibrary.Models;
+﻿#nullable disable
+namespace CustomersBogusLibrary.Models;
 public class Customer
 {
     public int Id { get; set; }
