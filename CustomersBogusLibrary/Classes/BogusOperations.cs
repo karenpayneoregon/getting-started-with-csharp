@@ -15,10 +15,6 @@ public class BogusOperations
     /// <returns>
     /// A list of <see cref="Customer"/> objects populated with random data.
     /// </returns>
-    /// <remarks>
-    /// * This method was created by GitHub Copilot using the following prompt: BogusCustomers.prompt.md
-    /// * FirstName was not gender aware which comes from training so Karen altered the code
-    /// </remarks>
     public static List<Customer> GenerateCustomers(int count = 10)
     {
         Randomizer.Seed = new(338);
