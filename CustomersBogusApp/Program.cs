@@ -1,7 +1,5 @@
 ﻿using CustomersBogusApp.Classes;
 using CustomersBogusApp.Classes.Helpers;
-using CustomersBogusLibrary.Classes;
-using CustomersBogusLibrary.Models;
 
 namespace CustomersBogusApp;
 internal partial class Program
@@ -11,7 +9,6 @@ internal partial class Program
     /// </summary>
     private static void Main()
     {
-
         CustomersForAndWhile.TraditionalForStatement();
         CustomersForAndWhile.TraditionalForEachStatement();
         CustomersForAndWhile.ForEachWithIndexStatement();
