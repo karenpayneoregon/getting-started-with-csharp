@@ -9,7 +9,7 @@ namespace SingletonLibrary.Classes;
 /// <remarks>
 /// JsonRoot() requires NuGet package ConsoleConfigurationLibrary
 /// </remarks>
-public static class Configuration
+public static class JsonConfiguration
 {
     /// <summary>
     /// Reads a configuration section and converts it to the specified type.

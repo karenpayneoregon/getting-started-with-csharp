@@ -28,7 +28,7 @@ public sealed class AppConfiguration
     private AppConfiguration()
     {
 
-        HelpDesk = Configuration.ReadSection<HelpDesk>(nameof(HelpDesk));
+        HelpDesk = JsonConfiguration.ReadSection<HelpDesk>(nameof(HelpDesk));
 
     }
 }
