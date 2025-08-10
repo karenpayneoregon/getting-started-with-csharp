@@ -18,12 +18,20 @@ public static class SpectreConsoleHelpers
         AnsiConsole.WriteLine();
     }
 
-    public static void PrintCyan([CallerMemberName] string? methodName = null)
+    /// <summary>
+    /// Displays the file name and method name in cyan text.
+    /// </summary>
+    /// <param name="filePath">The full path of the source file.</param>
+    /// <param name="methodName">The name of the calling method.</param>
+    public static void PrintCyan([CallerFilePath] string? filePath = null, [CallerMemberName] string? methodName = null)
     {
-        AnsiConsole.MarkupLine($"[cyan]{methodName}[/]");
+        AnsiConsole.MarkupLine($"[cyan]{Path.GetFileNameWithoutExtension(filePath)}[/][yellow bold].[/][cyan]{methodName}[/]");
         Console.WriteLine();
     }
 
+    /// <summary>
+    /// Displays a horizontal line separator in the console with a grey style, centered on the screen.
+    /// </summary>
     public static void LineSeparator()
     {
         AnsiConsole.Write(new Rule().RuleStyle(Style.Parse("grey")).Centered());
@@ -43,5 +51,5 @@ public static class SpectreConsoleHelpers
     /// <param name="sender"></param>
     /// <returns></returns>
     public static string ConsoleRemove(this string sender)
-        => Markup.Remove(sender);
+        => Markup.Remove(sender);       
 }

@@ -21,34 +21,6 @@ public static class TimeOnlyExtensions
 
 
     /// <summary>
-    /// Determine if TimeOnly is before another TimeOnly
-    /// </summary>
-    public static bool IsLessThan(this TimeOnly endTimeOnly, TimeOnly startTime)
-        => endTimeOnly.CompareTo(startTime) < 0;
-    
-
-    public static bool IsLessThan<T>(this T sender, T compareTo) where T : IComparable<T>
-        => compareTo.CompareTo(sender) < 0;
-
-    /// <summary>
-    /// Determine if TimeOnly is after another TimeOnly
-    /// </summary>
-    public static bool IsGreaterThan(this TimeOnly endTime, TimeOnly startTime)
-        => endTime.CompareTo(startTime) > 0;
-
-
-    public static bool IsGreaterThan<T>(this T sender, T compareTo) where T : IComparable
-        => sender.CompareTo(compareTo) > 0;
-
-
-    /// <summary>
-    /// Determine if TimeOnly is the same as another TimeOnly
-    /// </summary>
-    public static bool AreSame(this TimeOnly endTimeOnly, TimeOnly startTimeOnly)
-        => endTimeOnly.CompareTo(startTimeOnly) == 0;
-
-
-    /// <summary>
     /// Get time between two TimeOnly as a TimeSpan
     /// </summary>
     /// <remarks>
@@ -56,13 +28,5 @@ public static class TimeOnlyExtensions
     /// </remarks>
     public static TimeSpan Duration(this TimeOnly endTimeOnly, TimeOnly starTimeOnly)
         => endTimeOnly - starTimeOnly;
-
-    /// <summary>
-    /// Get current time broken down by hour, minutes, seconds
-    /// </summary>
-    /// <param name="sender">DateTime</param>
-    /// <returns>named value tuple</returns>
-    public static (int hour, int minute, int second) TimeSegments(this TimeOnly sender)
-        => (sender.Hour, sender.Minute, sender.Second);
 
 }
