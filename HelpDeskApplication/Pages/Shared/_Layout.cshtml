@@ -1,7 +1,8 @@
 ﻿@using Serilog
-@using Serilog.Core
 @using SpecialValidatorsLibrary.Models
-@inject IConfiguration Configuration
+@using Microsoft.Extensions.Options
+@inject IOptions<HelpDesk> HelpDeskOptions
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,24 +43,20 @@
         </main>
     </div>
 
-<footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted">
 
-    <div class="container">
+        <div class="container">
 
-        @{
-            Log.Information("Reading help desk value...");
+            @{
+                Log.Information("Reading help desk value...");
+            }
 
-            var helpDesk = Configuration.GetSection(nameof(HelpDesk)).Get<HelpDesk>();
-            var email = helpDesk?.Email;
-            var phone = helpDesk?.Phone;
-        }
+            <span class="text-success fw-bold">Help Desk:</span>
+            <span><strong>Phone</strong> @HelpDeskOptions.Value.Phone</span><div class="vr opacity-100 ms-2"></div> <span><strong>Email</strong> <a href="mailto:@HelpDeskOptions.Value.Email">Send message</a></span>
 
-        <span class="text-success fw-bold">Help Desk:</span> <strong>Phone</strong> @phone
-        <div class="vr opacity-100"></div> <strong>Email</strong> @email
+        </div>
 
-    </div>
-
-</footer>
+    </footer>
 
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

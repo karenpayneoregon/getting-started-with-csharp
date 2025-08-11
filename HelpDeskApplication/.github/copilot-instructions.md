@@ -11,7 +11,7 @@
   - Sensitive configuration (connection strings, credentials) loaded from the `Secrets/` directory via key-per-file
 
 ## Architecture & Patterns
-- **Entry Point:** `Program.cs` configures DI, logging, and loads secrets from `FileSettings.SecretsDirectory` (default: `C:\OED\Secrets`).
+- **Entry Point:** `Program.cs` configures DI, logging, and loads secrets from `FileSettings.SecretsDirectory` (default: `C:\Secrets`).
 - **Configuration:**
   - `appsettings.json` and `appsettings.Development.json` for base config
   - `Secrets/` directory for sensitive values (e.g., `ConnectionString`, `DatabasePassword`)
