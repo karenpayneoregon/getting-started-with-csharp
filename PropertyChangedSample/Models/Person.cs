@@ -8,25 +8,25 @@ internal partial class Person : Base, INotifyPropertyChanged
     public string FirstName
     {
         get => field.TrimEnd();
-        set => SetField(ref field, value, nameof(FirstName));
+        set => SetField(ref field, value);
     }
 
     public string LastName
     {
         get => field.TrimEnd();
-        set => SetField(ref field, value, nameof(LastName));
+        set => SetField(ref field, value);
     }
 
     public DateTime BirthDate
     {
         get;
-        set => SetField(ref field, value, nameof(BirthDate));
+        set => SetField(ref field, value);
     }
 
     public Gender Gender
     {
         get;
-        set => SetField(ref field, value, nameof(Gender));
+        set => SetField(ref field, value);
     }
 
     public partial string Remarks { get; set; }
