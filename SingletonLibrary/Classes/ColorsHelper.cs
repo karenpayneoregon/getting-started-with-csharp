@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.ComponentModel;
+using System.Drawing;
 
 namespace SingletonLibrary.Classes;
 
@@ -28,5 +29,20 @@ public sealed class ColorsHelper
     private ColorsHelper()
     {
         SeasonColor = Color.FromName(SeasonColorHelper.GetSeasonColor().Name);
+    }
+
+    public static Color GetColorFromString(string colorString)
+    {
+        // Example for hexadecimal color string (e.g., "#FF0000" for red)
+        if (colorString.StartsWith("#"))
+        {
+            return ColorTranslator.FromHtml(colorString);
+        }
+        // Example for named color string (e.g., "Red", "Blue")
+        else
+        {
+            var converter = TypeDescriptor.GetConverter(typeof(Color)); // Use TypeDescriptor to get a TypeConverter instance
+            return (Color)(converter.ConvertFromString(colorString) ?? Color.BlanchedAlmond); // Use the instance to call ConvertFromString
+        }
     }
 }
