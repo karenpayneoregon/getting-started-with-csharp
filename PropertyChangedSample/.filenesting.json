@@ -8,7 +8,7 @@
           "PersonNotify.cs": [
             "Person.cs"
           ],
-          "PersonOther.cs": [
+          "PersonSets.cs": [
             "Person.cs"
           ]
         }
@@ -16,4 +16,6 @@
     }
   }
 }
+
+
 
