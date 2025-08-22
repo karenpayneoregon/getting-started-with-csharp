@@ -5,10 +5,10 @@
     "add": {
       "fileToFile": {
         "add": {
-          "PersonNotify.cs": [
+          "Person.Notification.cs": [
             "Person.cs"
           ],
-          "PersonSets.cs": [
+          "Person.Sets.cs": [
             "Person.cs"
           ]
         }
